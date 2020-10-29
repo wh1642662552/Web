@@ -1,0 +1,99 @@
+/*右边的下面*/
+.content{
+    background: #fff;
+    margin: 28px 26px 0;
+    height: 100%;
+    padding: 30px 15px 0 20px;
+}
+.content .tit{
+    display: flex;
+    justify-content: space-between;
+}
+.content .tit h2{
+    font-size: 28px;
+    color: #929292;
+    margin-top: 0;
+}
+.content .tit p{
+     height: 28px;
+     line-height: 28px;
+ }
+.content .tit p span{
+    color: #16b8c7;
+}
+.content .add-dep{
+    margin-top: 28px;
+}
+.content table{
+    margin-top: 18px;
+}
+#right .content table td{
+    line-height: 36px;
+}
+.content table,.content table th{
+    text-align: center;
+}
+.content table .t1{
+    text-align: left;
+}
+.content table p{
+    width: 400px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display:inline-block;
+    margin: 0;
+    vertical-align: middle;
+}
+.content table button{
+    margin: 0 4px;
+}
+
+/*添加 查看*/
+#add form span,#checkBox form span,#editBox form span{
+    margin-left: 222px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+#add form table,#checkBox form table,#editBox form table{
+    text-align: center;
+}
+#add form td,#checkBox form td,#editBox form td{
+    vertical-align: middle;
+}
+
+
+/*操作*/
+.handle{
+    display: flex;
+    justify-content: space-between;
+}
+
+.select{
+    display: inline-block;
+}
+
+/*分页*/
+.paging{
+    display: flex;
+    justify-content:flex-end;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

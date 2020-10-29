@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>http://www.gxaedu.com</title>
+    <link rel="stylesheet" href="../util/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/dep.css">
+    <link rel="stylesheet" href="../font/iconfont.css">
+    <script src="../util/jquery-3.4.1.js"></script>
+    <script src="../util/dist/js/bootstrap.js"></script>
+</head>
+<body>
+    <div id="box">
+        <div id="left">
+            <h1>星星幼儿园</h1>
+            <div class="msg">
+                <img src="../images/touxiang.jpg" alt="">
+                <p class="name">root</p>
+                <p class="pos">院长</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="department.html">
+                        <span class="iconfont icon-untitled85"></span>部门管理</a></li>
+                    <li><a href="teacher.html"><span class="iconfont icon-huihuilicaishi"></span>教师管理</a></li>
+                    <li><a href=""><span class="iconfont icon-banjiguanli
+"></span>班级管理</a></li>
+                    <li><a href=""><span class="iconfont icon-xueshengdangan
+"></span>学生管理</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="right">
+            <header>
+                <p>2020年2月6日 星期四 10:10:10</p>
+                <a href=""><span class="iconfont icon-guanbi"></span></a>
+            </header>
+            <div class="content">
+                <div class="tit">
+                    <h2>部门管理</h2>
+                    <p>共有数据 <span class="total">5</span>条</p>
+                </div>
+                <div>
+                    <button class="add-dep btn btn-info">
+                        <span class="iconfont icon-tianjia"></span>
+                        新增部门
+                    </button>
+                </div>
+                <div>
+                    <table class="table_msg table table-bordered table-striped">
+                        <tr>
+                            <th>编号</th>
+                            <th>部门名称</th>
+                            <th>部门描述</th>
+                            <th>人员数量</th>
+                            <th>操作</th>
+                        </tr>
+                        <!--<tr>
+                            <td>1</td>
+                            <td>教育部</td>
+                            <td class="t1">
+                                <p>主要负责面向全体幼儿，全面提高幼儿素质。重点抓好幼儿教育、教学、保育工作。加强教育科学研究,不断提高保教、保育质量。
+                                </p><button class="btn btn-info details" data-trigger="focus" data-toggle="popover" title="教育部" data-content="主要负责面向全体幼儿，全面提高幼儿素质。重点抓好幼儿教育、教学、保育工作。加强教育科学研究,不断提高保教、保育质量。">详情</button>
+                            </td>
+                            <td>1</td>
+                            <td>
+                                <button class="btn
+                                               btn-primary
+                                               iconfont
+                                               icon-chakan" data-toggle="modal" data-target="#checkBox">
+                                </button><button class="btn btn-danger iconfont icon-icon_huabanfuben" data-toggle="modal" data-target="#delBox"></button><button class="btn btn-warning iconfont icon-bianji_huaban" data-toggle="modal" data-target="#editBox"></button></td>
+                        </tr>
+                        <-->
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--新增按钮对应的弹出框-->
+    <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="">新增部门</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <p><span>部门名称</span></p>
+                        <p><input type="text" class="addDepName form-control"></p>
+                        <p><span>部门职位</span><button type="button" class="addPosBtn iconfont icon-tianjia btn btn-info"></button></p>
+
+                        <table class="addTable table table-bordered table-striped">
+                            <tr>
+                                <th>编号</th>
+                                <th>职位名称</th>
+                                <th>人员数量</th>
+                                <th>操作</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td><input type="text" class="form-control i1"></td>
+                                <td>0</td>
+                                <td><button type="button" class="addDelPos btn btn-danger iconfont icon-icon_huabanfuben"></button></td>
+                            </tr>
+                        </table>
+                        <p><span>部门描述</span></p>
+                        <textarea class="addDepMsg form-control" rows="3"></textarea>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="reset" class="addResetBtn btn btn-default" >重置</button>
+                    <button type="button" class="btn btn-primary addAddDep">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--查看的模态框-->
+    <div class="modal fade" id="checkBox" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="">查看详情</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <p><span >部门名称</span></p>
+                        <p><input type="text" disabled class="form-control checkDepName" value="aaa"></p>
+                        <p><span>部门职位</span><button disabled class="iconfont icon-tianjia btn btn-info"></button></p>
+
+                        <table class="checkTable table table-bordered table-striped">
+                            <tr class="checkFirst">
+                                <th>编号</th>
+                                <th>职位名称</th>
+                                <th>人员数量</th>
+                                <th>操作</th>
+                            </tr>
+                            <!--<tr>
+                                <td>1</td>
+                                <td><input disabled type="text" class="form-control i1 checkPosName" value="aaa"></td>
+                                <td class="checkPosNum">4</td>
+                                <td><button disabled class="btn btn-danger iconfont icon-icon_huabanfuben"></button></td>
+                            </tr>-->
+                        </table>
+                        <p><span>部门描述</span></p>
+                        <textarea disabled class="form-control checkDepMsg" rows="3"></textarea>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--删除的模态框-->
+    <div class="modal fade " id="delBox" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="">提示</h4>
+                </div>
+                <div class="modal-body">
+                    是否确认删除
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">否</button>
+                    <button type="button" class="btn btn-primary delBtn">是</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--修改的模态框-->
+    <div class="modal fade" id="editBox" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="">修改部门信息</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <p><span>部门名称</span></p>
+                        <p><input type="text" class="editDepName form-control"></p>
+                        <p><span>部门职位</span><button type="button" class="editAddPos iconfont icon-tianjia btn btn-info"></button></p>
+
+                        <table class="editTable table table-bordered table-striped">
+                            <tr class="editFirst">
+                                <th>编号</th>
+                                <th>职位名称</th>
+                                <th>人员数量</th>
+                                <th>操作</th>
+                            </tr>
+                            <!--<tr>
+                                <td>1</td>
+                                <td><input type="text" class="form-control i1"></td>
+                                <td>0</td>
+                                <td><button class="btn btn-danger iconfont icon-icon_huabanfuben"></button></td>
+                            </tr>-->
+                        </table>
+                        <p><span>部门描述</span></p>
+                        <textarea class="editDepMsg form-control" rows="3"></textarea>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="editResetBtn btn btn-default">重置</button>
+                    <button type="button" class="btn btn-primary editBtn">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var iNow=0; //默认现在操作的数据id
+    /*加载部门列表*/
+    /*
+    * 1、查询部门列表
+        接口地址：/getDepList
+        数据不需要
+        返回{state:0,data:[{id,name,msg,pos:[{pName,pNum},{}...]},{},{}...]}
+        id 数据主键id
+        name  部门名称
+        msg   部门描述
+    * */
+    function getData(){
+        $.ajax({
+            url:'/getDepList',
+            success:function (res) {
+                console.log(res);
+                if(res.state==0){
+                    //成功
+                    $('.table_msg tr:gt(0)').remove();
+
+                    $.each(res.data,function (i,v) {//i 下标 v 每一项的内容
+                        $('.table_msg').append(`<tr data-id="${v.id}" data-pos='${JSON.stringify(v.pos)}'>
+                        <td>${i+1}</td>
+                        <td class="listDepName">${v.name}</td>
+                        <td class="t1">
+                            <p class="listDepMsg">${v.msg}
+                            </p><button class="btn btn-info details" data-trigger="focus" data-toggle="popover" title="${v.name}" data-content="${v.msg}">详情</button>
+                        </td>
+                        <td class="pos_num">1</td>
+                        <td>
+                            <button class="
+                                           check
+                                           btn
+                                           btn-primary
+                                           iconfont
+                                           icon-chakan">
+                            </button><button class="btn btn-danger iconfont icon-icon_huabanfuben delConfirm" ></button><button class="edit btn btn-warning iconfont icon-bianji_huaban"></button></td>
+                        </tr>`);
+                        var n=0;
+                        for(var j=0;j<v.pos.length;j++){
+                            n+=v.pos[j].pNum
+                        }
+                        //$('.pos_num').eq(i).text(n);
+                        $('.pos_num:last').text(n);
+                    });
+
+                    /*详情的功能*/
+                    $('.details').popover({
+                        animation:true
+                    });
+
+                    /*修改共有几条数据*/
+                    $('.total').text(res.data.length);
+
+                }else{
+                    //失败
+                    alert('获取数据失败，请刷新页面！');
+                    console.log(res.msg);
+                }
+            }
+        })
+    }
+    getData();
+    /*
+    * 3、删除部门
+        接口地址 /delDep
+        数据{id}
+        返回{state}
+    * */
+    /*点击删除的确定*/
+    $('.delBtn').click(function () {
+        console.log(iNow)
+        $.ajax({
+            url:'/delDep',
+            type:'post',
+            data:{
+                id:iNow
+            },
+            success:function (res) {
+                if(res.state==0){
+                    $('.table_msg tr[data-id='+iNow+']').remove();
+                }else{
+                    alert(res.msg)
+                }
+            }
+        });
+
+        $('#delBox').modal('hide');
+    });
+
+    /*确认删除按钮点击的时候*/
+    $('.table_msg').on('click','.delConfirm',function () {
+        if($(this).parent().prev().text()==0){
+            iNow=$(this).parents('tr').attr('data-id');
+            $('#delBox').modal('show') //手动打开模态框
+        }else{
+            alert('有人不能删！')
+        }
+
+    });
+
+    /*添加查看的点击事件*/
+    $('.table_msg').on('click','.check',function () {
+
+        //加部门名称
+        //var depName=$(this).parents('tr').find('td').eq(1).text();
+
+        var depName=$(this).parents('tr').find('.listDepName').text();
+        $('#checkBox .checkDepName').val(depName);
+        //部门描述
+       // var depMsh=$(this).parents('tr').find('td').eq(2).find('p').text();
+
+        var depMsg=$(this).parents('tr').find('.listDepMsg').text();
+        $('#checkBox .checkDepMsg').text(depMsg);
+
+        //获取职位的信息
+        var pos=JSON.parse($(this).parents('tr').attr('data-pos'));
+
+        $('#checkBox tr:not(".checkFirst")').remove(); //除了第一个tr不删其他都删
+
+        $.each(pos,function (i,v) {  //循环插入
+            $('.checkTable').append(`<tr>
+                                <td>${i+1}</td>
+                                <td><input disabled type="text" class="form-control i1 checkPosName" value="${v.pName}"></td>
+                                <td class="checkPosNum">${v.pNum}</td>
+                                <td><button disabled class="btn btn-danger iconfont icon-icon_huabanfuben"></button></td>
+                            </tr>`);
+        });
+
+        //手动让弹出框显示
+        $('#checkBox').modal('show')
+    });
+
+    /*编辑信息赋值*/
+    function  editMsg(){
+        //获取部门名称赋值
+        $('#editBox .editDepName').val($('tr[data-id="'+iNow+'"]').find('.listDepName').text());
+        //获取部门信息赋值
+        $('#editBox .editDepMsg').val($('tr[data-id="'+iNow+'"]').find('.listDepMsg').text());
+        //获取职位数据
+        var pos=JSON.parse($('tr[data-id="'+iNow+'"]').attr('data-pos'));
+        //循环插入职位数据
+        $('.editTable tr:not(".editFirst")').remove();
+
+        $.each(pos,function (i,v) {
+            $('.editTable').append(`<tr data-id="${v.pId}">
+                                <td>${i+1}</td>
+                                <td><input type="text" value="${v.pName?v.pName:''}" class="form-control i1 editPosName"></td>
+                                <td class="editPosNum">${v.pNum}</td>
+                                <td><button type="button" class="editDelBtn btn btn-danger iconfont icon-icon_huabanfuben"></button></td>
+                            </tr>`);
+        });
+    }
+    /*修改*/
+    $('.table_msg').on('click','.edit',function () {
+        //手动显示出弹出框
+        $('#editBox').modal('show');
+        //修改全局的id
+        iNow=$(this).parents('tr').attr('data-id');
+        editMsg();
+    });
+
+    /*当按修改里面的重置的时候*/
+    $('.editResetBtn').click(function () {
+        editMsg();
+    });
+
+    /*当按确定修改键*/
+    $('.editBtn').click(function () {
+        //让编辑框消失
+        $('#editBox').modal('hide');
+
+        /*
+        * 4、改
+            接口地址 /editDep
+            数据{id,name,msg,pos:[{p_id:1,pName:'老师1'}]}
+            返回{state}
+        * */
+
+        var pos=[];
+        $('.editTable tr:not(".editFirst")').each(function (i,v) {
+            console.log(v);
+            pos.push({
+                pId:$(v).attr('data-id'),
+                nName:$(v).find('input').val()
+            })
+        });
+
+
+        $.ajax({
+            url:"/editDep",
+            type:'post',
+            data:{
+                id:iNow,
+                name:$('#editBox .editDepName').val(),
+                msg:$('#editBox .editDepMsg').val(),
+                pos:pos
+            },
+            success:function (res) {
+                if(res.state){
+                    alert(res.msg);
+                }else{
+                    getData();
+                }
+            }
+        })
+    });
+
+    /*编辑窗口添加部门*/
+    $('.editAddPos').click(function () {
+        var n=$('.editTable').find('tr').length;
+        $('.editTable').append(`<tr data-id="0">
+                <td>${n}</td>
+                <td><input type="text" value="" class="form-control i1 editPosName"></td>
+                <td class="editPosNum">0</td>
+                <td><button type="button"  class="editDelBtn btn btn-danger iconfont icon-icon_huabanfuben"></button></td>
+            </tr>`)
+    });
+
+    /*编辑窗口的删除职位功能*/
+    $('#editBox').on('click','.editDelBtn',function () {
+        var bunBtn=$(this).parent().prev();
+        var n=bunBtn.text();
+        var posName=bunBtn.prev().find('input').val();
+        var _this=$(this);
+
+        if(n>0){
+            alert('部门有人不能删除！！！');
+        }else{
+            if(posName){
+                //删除数据库
+                $.ajax({
+                    url:'/delPos',
+                    data:{
+                        id:$(this).parents('tr').attr('data-id')
+                    },
+                    success:function (res) {
+                        console.log(res);
+                        if(res.state==0){
+                            console.log(_this);
+                            _this.parents('tr').remove();
+                        }else{
+                            alert('删除失败')
+                        }
+                    }
+                })
+            }else{
+                $(this).parents('tr').remove();
+            }
+        }
+    });
+
+
+    /*增加窗口的职位添加*/
+    $('.addPosBtn').click(function () {
+        var n=$('.addTable').find('tr').length;
+
+        $('.addTable').append(`<tr>
+            <td>${n}</td>
+            <td><input type="text" class="form-control i1"></td>
+            <td>0</td>
+            <td><button type="button" class="btn addDelPos btn-danger iconfont icon-icon_huabanfuben"></button></td>
+        </tr>`);
+
+
+    });
+
+    function addBoxReset(){
+        //删除
+        $('.addTable tr:gt(1)').remove();
+        //清空
+        $('.addTable tr:eq(1)').find('input').val('');
+        $('#add textarea').val('');
+        $('#add .addDepName').val('');
+    }
+    /*点击新增弹出编辑框*/
+    $('.add-dep').click(function () {
+        //显示框
+        $('#add').modal('show');
+        addBoxReset();
+    });
+
+    //新增窗口里面的删除按钮点击
+    $('.addTable').on('click','.addDelPos',function () {
+        $(this).parents('tr').remove();
+    });
+    // 新增窗口中按确定的时候
+    /*
+    * 2、新增部门
+        接口地址 /addDep
+        数据{name,msg,pos:['aaa','bbb']}
+            pos  职位名称
+    * */
+    $('.addAddDep').click(function () {
+        var pos=[];
+        $('.addTable tr:gt(0)').each(function (i,v) {
+            pos.push($(v).find('input').val())
+        });
+
+        var name=$('.addDepName').val();
+        var msg=$('.addDepMsg').val();
+
+
+        $.ajax({
+            url:'/addDep',
+            data:{
+                name:name,
+                msg:msg,
+                pos:pos
+            },
+            success:function (res) {
+                if(res.state==0){
+                    /*//关闭窗口
+                    $('#add').modal('hide');
+                    //在列表中添加数据
+                    $('.table_msg').append(`<tr data-id="${res.id}" data-pos='暂定'>
+                        <td>0</td>
+                        <td class="listDepName">${v.name}</td>
+                        <td class="t1">
+                            <p class="listDepMsg">${v.msg}
+                            </p><button class="btn btn-info details" data-trigger="focus" data-toggle="popover" title="${v.name}" data-content="${v.msg}">详情</button>
+                        </td>
+                        <td class="pos_num">1</td>
+                        <td>
+                            <button class="
+                                           check
+                                           btn
+                                           btn-primary
+                                           iconfont
+                                           icon-chakan">
+                            </button><button class="btn btn-danger iconfont icon-icon_huabanfuben delConfirm" ></button><button class="edit btn btn-warning iconfont icon-bianji_huaban"></button></td>
+                        </tr>`);
+                    var n=0;
+                    for(var j=0;j<v.pos.length;j++){
+                        n+=v.pos[j].pNum
+                    }
+                    //$('.pos_num').eq(i).text(n);
+                    $('.pos_num:last').text(n);*/
+                    //刷新页面
+                    //location.reload();
+                    //重新直接调用请求列表的接口
+                    getData();
+                    $('#add').modal('hide');
+                }else{
+                    alert(res.msg)
+                }
+
+
+
+            }
+        })
+
+
+    });
+    /*添加框里面的重置*/
+    $('.addResetBtn').click(function () {
+        addBoxReset();
+    })
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,83 @@
+/*整体框架的样式*/
+* {
+    margin: 0;
+    padding: 0
+}
+#box{
+    display: flex;
+    height: 100%;
+}
+#left{
+    width: 280px;
+    height: 100%;
+}
+#right{
+    flex: 1;
+    height: 100%;
+}
+body,html{
+    height: 100%;
+}
+/*左侧的样式*/
+#left h1{
+    text-align: center;
+    margin-top:20px;
+    font-size: 20px;
+    color: #16b8c7;
+}
+#left .msg{
+    text-align: center;
+}
+#left .msg img{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin-top: 18px;
+}
+#left .name{
+    margin-top: 10px;
+}
+#left .pos{
+    color: #929292;
+    font-size: 14px;
+    margin-top: 12px;
+}
+#left nav{
+    margin-top:20px ;
+}
+#left nav li{
+    height: 38px;
+    line-height: 38px;
+}
+#left nav li:hover{
+    background: #f7f8fa;
+}
+#left nav li a{
+    color: #929292;
+    text-decoration: none;
+    font-size: 14px;
+}
+#left nav li a span{
+    margin:0 30px 0 60px ;
+}
+/*右侧的上面*/
+#right{
+    background: #f7f8fa;
+    overflow: hidden;
+}
+#right header{
+    height: 50px;
+    line-height: 50px;
+    background: #16b8c7;
+    color: #fff;
+    display: flex;
+}
+#right header p{
+    padding-left: 26px;
+    flex: 1;
+}
+#right header a{
+    width: 20px;
+    height: 20px;
+    margin-right: 24px;
+}

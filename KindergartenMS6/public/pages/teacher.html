@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>http://www.gxaedu.com</title>
+    <link rel="stylesheet" href="../util/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/teacher.css">
+    <link rel="stylesheet" href="../font/iconfont.css">
+    <script src="../util/jquery-3.4.1.js"></script>
+    <script src="../util/dist/js/bootstrap.js"></script>
+</head>
+<body>
+    <div id="box">
+        <div id="left">
+            <h1>星星幼儿园</h1>
+            <div class="msg">
+                <img src="../images/touxiang.jpg" alt="">
+                <p class="name">root</p>
+                <p class="pos">院长</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="department.html">
+                        <span class="iconfont icon-untitled85"></span>部门管理</a></li>
+                    <li><a href="teacher.html"><span class="iconfont icon-huihuilicaishi"></span>教师管理</a></li>
+                    <li><a href=""><span class="iconfont icon-banjiguanli
+"></span>班级管理</a></li>
+                    <li><a href=""><span class="iconfont icon-xueshengdangan
+"></span>学生管理</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="right">
+            <header>
+                <p>2020年2月6日 星期四 10:10:10</p>
+                <a href=""><span class="iconfont icon-guanbi"></span></a>
+            </header>
+            <div class="content">
+                <div class="tit">
+                    <h2>教职工管理</h2>
+                    <p>共有数据 <span>13</span>条</p>
+                </div>
+                <div class="handle">
+                    <div>
+                        <button class="btn btn-default">全选</button>
+                        <button class="btn btn-danger"><span class="iconfont icon-icon_huabanfuben
+"></span>批量删除</button>
+                        <button class="btn btn-info" data-toggle="modal" data-target="#add"><span class="iconfont icon-tianjia batchDel"></span>新增职工</button>
+                    </div>
+                    <div class="">
+                        <form class="form-inline">
+                            <div class="dropdown select">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    搜索全部
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <li><a href="#">搜索全部</a></li>
+                                    <li><a href="#">搜索编号</a></li>
+                                    <li><a href="#">搜索手机</a></li>
+                                    <li><a href="#">搜索姓名</a></li>
+                                    <li><a href="#">搜索邮箱</a></li>
+                                </ul>
+                            </div>
+                            <input type="text" class="form-control">
+                            <button class="btn btn-default"><span class="iconfont icon-sousuo
+"></span>搜索</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class=" workerList table table-bordered table-striped">
+                        <tr>
+                            <th></th>
+                            <th>编号</th>
+                            <th>姓名</th>
+                            <th>性别</th>
+                            <th>手机号码</th>
+                            <th>所有部门</th>
+                            <th>所有职位</th>
+                            <th class="hidden-md hidden-sm">年龄</th>
+                            <th class="hidden-md hidden-sm">入职时间</th>
+                            <th>在职状态</th>
+                            <th>操作</th>
+                        </tr>
+                        <!--<tr>
+                            <td><input type="checkbox"></td>
+                            <td>199000</td>
+                            <td>羌活</td>
+                            <td>男</td>
+                            <td>15680201441</td>
+                            <td>教育部</td>
+                            <td>老师</td>
+                            <td>26</td>
+                            <td>2019-02-24</td>
+                            <td><span class="label label-success">在职在岗</span></td>
+                            <td>
+                                <button class="btn
+                                               btn-primary
+                                               iconfont
+                                               icon-chakan" data-toggle="modal" data-target="#checkBox">
+                                查看
+                                </button><button class="btn btn-danger iconfont icon-icon_huabanfuben" data-toggle="modal" data-target="#delBox">删除</button><button class="btn btn-warning iconfont icon-bianji_huaban" data-toggle="modal" data-target="#editBox">编辑</button></td>
+                        </tr>-->
+
+                    </table>
+                </div>
+                <div class="paging">
+                    <nav class="pageNav" aria-label="Page navigation">
+                        <ul class="pagination">
+                            <li class="prevBtn">
+                                <a href="#" aria-label="Previous" >
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <!--<li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>-->
+                            <li class="nextBtn">
+                                <a href="#" aria-label="Next" >
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--新增按钮对应的弹出框-->
+    <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="">新增教职工</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div>
+                            <p><span>姓名</span><input type="text"></p>
+                            <p>
+                                <span>性别</span>
+                                <input type="radio" name="sex" id="">男
+                                <input type="radio" name="sex" id="">女
+                            </p>
+                            <p><span>出生日期</span><input type="date"></p>
+                            <p><span>身份证号</span><input type="text"></p>
+                            <p>
+                                <span>部门</span>
+                                <select name="" id="">
+                                    <option>请选择</option>
+                                    <option>行政办</option>
+                                    <option>保卫科</option>
+                                </select>
+                            </p>
+                            <p>
+                                <span>职务</span>
+                                <select name="" id="">
+                                    <option>请先选择部门</option>
+                                    <option>老师</option>
+                                    <option>院长</option>
+                                </select>
+                            </p>
+                        </div>
+                        <div>
+                            <p><span>入职日期</span><input type="date"></p>
+                            <p>
+                                <span>在职状态</span>
+                                <select name="" id="">
+                                    <option>在职在岗</option>
+                                    <option>在职离岗</option>
+                                    <option>离职离岗</option>
+                                </select>
+                            </p>
+                            <p><span>手机</span><input type="text"></p>
+                            <p><span>邮箱</span><input type="text"></p>
+                            <p><span>紧急联系人</span><input type="text"></p>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">重置</button>
+                    <button type="button" class="btn btn-primary">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--查看的模态框-->
+    <div class="modal fade" id="checkBox" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="">查看详情</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <p><span>部门名称</span></p>
+                        <p><input type="text" disabled class="form-control"></p>
+                        <p><span>部门职位</span><button disabled class="iconfont icon-tianjia btn btn-info"></button></p>
+
+                        <table class="table table-bordered table-striped">
+                            <tr>
+                                <th>编号</th>
+                                <th>职位名称</th>
+                                <th>人员数量</th>
+                                <th>操作</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td><input disabled type="text" class="form-control i1"></td>
+                                <td>0</td>
+                                <td><button disabled class="btn btn-danger iconfont icon-icon_huabanfuben"></button></td>
+                            </tr>
+                        </table>
+                        <p><span>部门描述</span></p>
+                        <textarea disabled class="form-control" rows="3"></textarea>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">重置</button>
+                    <button type="button" class="btn btn-primary">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--删除的模态框-->
+    <div class="modal fade " id="delBox" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="">提示</h4>
+                </div>
+                <div class="modal-body">
+                    是否确认删除
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">否</button>
+                    <button type="button" class="btn btn-primary delData">是</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--修改的模态框-->
+    <div class="modal fade" id="editBox" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="">修改部门信息</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <p><span>部门名称</span></p>
+                        <p><input type="text" class="form-control"></p>
+                        <p><span>部门职位</span><button class="iconfont icon-tianjia btn btn-info"></button></p>
+
+                        <table class="table table-bordered table-striped">
+                            <tr>
+                                <th>编号</th>
+                                <th>职位名称</th>
+                                <th>人员数量</th>
+                                <th>操作</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td><input type="text" class="form-control i1"></td>
+                                <td>0</td>
+                                <td><button class="btn btn-danger iconfont icon-icon_huabanfuben"></button></td>
+                            </tr>
+                        </table>
+                        <p><span>部门描述</span></p>
+                        <textarea class="form-control" rows="3"></textarea>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">重置</button>
+                    <button type="button" class="btn btn-primary">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var page=1;
+    /*
+    * 1、查有多少条数据
+        /getWorkerNum
+        返回{state:0,num}   num 表示条数
+    * */
+    function getNum() {
+        $.ajax({
+            url:'/getWorkerNum',
+            success:function (res) {
+                console.log(res);
+                if(res.num<5){
+                    $('.pageNav').css('display','none');
+                }else{
+                    var n=Math.ceil(res.num/5);
+
+                    for(var i=0;i<n;i++){
+                        $('.pageNav li:last').before($(`<li><a class="pageBtn" href="javascript:;">${i+1}</a></li>`));
+                    }
+                    $('.pageNav li:eq('+page+')').addClass('active');
+                }
+
+            }
+        })
+    }
+    getNum();
+    /*2查看默认第一页的所有数据*/
+    /*
+    * /getPageCon
+数据{page}  page是页数
+返回{state,data:[{id,name,sex,tel,dep,pos,pState，date,email，urgent，idCard,birthday},{},....]}
+    * */
+    function getPageCon(page) {
+        $.ajax({
+            url:'/getPageCon',
+            data:{
+                page:page
+            },
+            success:function (res) {
+                console.log(res);
+                //删除除了表头的所有数据
+                $('.workerList tr:not(.workerList tr:first)').remove();
+
+                $(res.data).each(function (i,v) {
+                    $('.workerList').append(`<tr>
+                            <td data-id=""><input type="checkbox"></td>
+                            <td>${v.w_id}</td>
+                            <td>${v.w_name}</td>
+                            <td>${v.w_sex}</td>
+                            <td>${v.w_tel}</td>
+                            <td>${v.d_name}</td>
+                            <td>${v.p_name}</td>
+                            <td class="hidden-md hidden-sm">26</td>
+                            <td class="hidden-md hidden-sm">${v.w_date}</td>
+                            <td><span class="label ${state2color(v.w_state)}">${state(v.w_state)}</span></td>
+                            <td>
+                                <button class="btn
+                                               btn-primary
+                                               iconfont
+                                               icon-chakan" data-toggle="modal" data-target="#checkBox">
+                                查看
+                                </button><button class="btn btn-danger iconfont icon-icon_huabanfuben delBtn" data-toggle="modal" data-target="#delBox">删除</button><button class="btn btn-warning iconfont icon-bianji_huaban" data-toggle="modal" data-target="#editBox">编辑</button></td>
+                        </tr>`)
+                })
+            }
+        })
+    }
+    getPageCon(page);
+
+    /*状态值对应文字*/
+    function state(n) {
+        var arr=['','在职在岗','在职离岗','离职离岗'];
+        return arr[n];
+    }
+    /*状态对应class*/
+    function state2color(n) {
+        var arr=['','label-success','label-warning','label-danger'];
+        return arr[n];
+    }
+    /*给分页加点击事件*/
+    $('.pageNav').on('click','.pageBtn',function () {
+        page=$(this).text();
+        getPageCon(page);
+        $('.pageNav li.active').removeClass('active');//之前带active去掉class
+        $('.pageNav li:eq('+page+')').addClass('active');//当前的page也增加classs
+    })
+
+    /*向下翻页*/
+    $('.nextBtn').click(function () {
+        page++;
+        console.log(page);
+        if (page>=$('.pageNav li:first').length-2){
+            page=$('.pageNav li:first').length-2;
+            return
+        }
+        getPageCon()
+        if ( page=$('.pageNav li:first').length-2){
+            $('.pageNav li:last').addClass('disabled')
+        }else {
+            $('.pageNav li:last').removeClass('disabled')
+        }
+    })
+
+    /*向上翻页*/
+    $('.prevBtn').click(function () {
+        page++;
+        console.log(page);
+        if (page>=1){
+            page=1;
+            return
+        }
+        getPageCon()
+        if ( page=1){
+            $('.pageNav li:first').addClass('disabled')
+        }else {
+            $('.pageNav li:first').removeClass('disabled')
+        }
+    })
+
+    /*删除*/
+    $('.workerList').on('click','delBtn',function () {
+        $('#delBox').modal('show');
+        count=$(this).parents('tr').find('td:eq(1)').text();
+        var idArr=[];
+        idArr.push(count);
+    })
+    /*确定删除按钮*/
+    $('.delData').click(function () {
+        $.ajax({
+            url:'/delWorker',
+            data: {
+                id:idArr
+            },
+            success:function (res) {
+            console.log(res);
+        }
+        })
+    })
+    /*批量删除按钮*/
+    $('.beachDel').click(function () {
+        $('#delBox').modal('show');
+        var idArr=[];
+        $('.workerList input:checked').each(function (i,v) {
+            idArr.push($(v).parent().next().text());
+        })
+    })
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
