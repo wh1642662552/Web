@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图书信息</title>
+    <link href="favicon.ico" rel="shortcut icon">
+    <style>
+      *{
+          margin: 0px;
+          padding: 0px;
+          list-style: none;
+      }
+      a {
+          text-decoration: none;
+      }
+      .widthCon {
+          width: 1200px;
+          margin: 0 auto;
+      }
+        .title{
+            height: 40px;
+            color: white;
+            padding-left: 30px;
+        }
+        .title a{
+              color: white;
+            padding-left: 20px;
+        }
+        header p{
+            color: white;
+            height: 60px;
+            line-height: 40px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color:  #453B30;
+        }
+        .banner{
+            background:url("img/banner.jpg");
+            height: 200px;
+        }
+        .clearfix:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        nav{
+            height: 70px;
+            line-height: 60px;
+            padding-top: 10px;
+            background: #D6D6D6 ;
+        }
+        nav ul{
+            height: 60px;
+            background-color: white;
+            border-top:1px solid #000 ;
+            border-bottom:1px solid #000 ;
+        }
+        nav li{
+            float: left;
+            padding-left: 20px;
+            font-size: 0.9em;
+            color: #999999;
+        }
+        .list{
+            margin-top: 20px;
+        }
+        .list li{
+            float: left;
+            margin: 20px;
+            background-color:#D6D6D6;
+        }
+        .list li p{
+            text-align: center;
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            color: black;
+        }
+        .list li img{
+            width: 200px;
+            height: 250px;
+        }
+        .addmore a{
+            display: block;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: black;
+        }
+        .title2{
+            padding-top: 10px;
+            height: 50px;
+        }
+        .title2 h4{
+            height: 40px;
+            line-height: 40px;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            padding-left: 20px;
+        }
+        .firCom li{
+            float: left;
+            margin: 20px;
+        }
+        .firCom img{
+            width: 260px;
+            height:170px;
+        }
+        .layer{
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0,0,0,0.3);
+            position: fixed;
+        }
+        .close {
+            position: absolute;
+            right: 10px;
+            top:6px;
+            font-size: 26px;
+            color: #d4d4d4;
+            cursor: pointer;
+        }
+        .layer .con{
+            width: 800px;
+            height: 420px;
+            background: rgb(172, 255, 194);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -200px;
+            margin-left: -400px;
+        }
+      .layer .min{
+          width: 400px;
+          height: 200px;
+          margin-top: -100px;
+          margin-left: -200px;
+          text-align: center;
+      }
+      .min p{
+          margin-top: 35px;
+      }
+      .con-left{
+          float: left;
+          width: 250px;
+          height: 100%;
+      }
+      .con-right{
+          float: left;
+          height: 100%;
+          width: 540px;
+      }
+      .con-left img{
+          width: 220px;
+          margin: 12px;
+          height: 300px;
+      }
+      .con-left p{
+          height: 54px;
+          text-align: center;
+          padding-top: 20px;
+      }
+      .con-right h4{
+          font-size: 16px;
+          margin: 10px 0 6px 0;
+      }
+      .con-right p{
+          height: 40px;
+          line-height: 40px;
+      }
+      .con-right .tit span{
+          height: 30px;
+          padding: 4px 8px;
+          border-radius:4px;
+          background: #eeeeee;
+          text-align: center;
+          line-height: 30px;
+          color: red;
+      }
+      .con-right .con-msg{
+          padding: 10px;
+          font-size: 12px;
+          line-height: 20px;
+          height:215px ;
+          overflow: hidden;
+      }
+      .con-des{
+          margin-top: 26px;
+          padding-left: 10px;
+          width: 100%;
+          height: 40px;
+      }
+      .con-des .con-num{
+          padding-right: 40px;
+      }
+      .con-des a{
+          padding-right: 20px;
+          padding-left: 10px;
+      }
+      .title span{
+          padding-left: 40px;
+          display: none;
+      }
+      .tit span{
+          margin-right: 10px;
+      }
+      .red{
+          color: red;
+      }
+      .green{
+          color: green;
+      }
+    </style>
+</head>
+<body>
+<header class="widthCon">
+    <p class="title">
+        爱书的朋友,欢迎来淘书！
+        <a href="javascript:;" id="lbtn">请登录</a>
+        <a href="javascript:;" id="rbtn">免费注册</a>
+
+    </p>
+    <div class="banner"></div>
+</header>
+<nav class="widthCon">
+    <ul class="clearfix daohang">
+        <!--<li>历史</li>
+        <li>历史</li>
+        <li>历史</li>
+        <li>历史</li>
+        <li>历史</li>
+        <li>历史</li>-->
+    </ul>
+</nav>
+<ul class="clearfix widthCon list">
+    <!--<li>
+        <a href="javascript:;">
+            <img src="img/1.jpg" alt="">
+            <p>微观世界</p>
+        </a>
+    </li>
+    <li>
+        <a href="javascript:;">
+            <img src="img/1.jpg" alt="">
+            <p>微观世界</p>
+        </a>
+    </li>
+    <li>
+        <a href="javascript:;">
+            <img src="img/1.jpg" alt="">
+            <p>微观世界</p>
+        </a>
+    </li>
+    <li>
+        <a href="javascript:;">
+            <img src="img/1.jpg" alt="">
+            <p>微观世界</p>
+        </a>
+    </li>
+    <li>
+        <a href="javascript:;">
+            <img src="img/1.jpg" alt="">
+            <p>微观世界</p>
+        </a>
+    </li>
+    <li>
+        <a href="javascript:;">
+            <img src="img/1.jpg" alt="">
+            <p>微观世界</p>
+        </a>
+    </li>
+    <li>
+        <a href="javascript:;">
+            <img src="img/1.jpg" alt="">
+            <p>微观世界</p>
+        </a>
+    </li>
+    <li>
+        <a href="javascript:;">
+            <img src="img/1.jpg" alt="">
+            <p>微观世界</p>
+        </a>
+    </li>
+    <li>
+        <a href="javascript:;">
+            <img src="img/1.jpg" alt="">
+            <p>微观世界</p>
+        </a>
+    </li>
+    <li>
+        <a href="javascript:;">
+            <img src="img/1.jpg" alt="">
+            <p>微观世界</p>
+        </a>
+    </li>-->
+</ul>
+<p class="widthCon addmore">
+    <a href="javascript:;">......点击加载更多</a>
+</p>
+<div class="widthCon title2">
+    <h4>合作单位</h4>
+</div>
+<ul class="widthCon firCom">
+   <!-- <li><a href=""><img src="img/dangdang.jpg"></a> </li>
+    <li><a href=""><img src="img/jingdong.jpg"></a> </li>
+    <li><a href=""><img src="img/jiushu.jpg"></a> </li>
+    <li><a href=""><img src="img/suning.jpg"></a> </li>
+    <li><a href=""><img src="img/tianmao.jpg"></a> </li>
+    <li><a href=""><img src="img/tushuguan.jpg"></a> </li>
+    <li><a href=""><img src="img/wenxuan.jpg"></a> </li>
+    <li><a href=""><img src="img/yamaxun.jpg"></a> </li>-->
+</ul>
+<div class="layer msg">
+    <div class="con clearfix">
+        <span class="close msgClose">X</span>
+        <div class="con-left">
+            <!--<img src="img/banner.jpg" alt="">
+                <p>出版日期：2013年4月28日</p>-->
+        </div>
+        <div class="con-right">
+            <h4>向诸葛亮借智慧</h4>
+            <p class="tit">
+                <!--<span>一本好书</span>
+                <span>三国历史</span>
+                <span>社会学好书推荐</span>
+                <span>管理书籍推荐</span>
+                <span>诸葛亮</span>-->
+            </p>
+            <p class="con-msg"><!--《向诸葛亮借智慧》是中央电视台《百家讲坛》主讲人赵玉平老师编著的一 本管理学类图书。从管理学和心理学角度出发，运用人力资源管理和组织行为学的知识，解读诸葛亮的一生，对三顾茅庐、舌战群儒、赤壁大战、空城计、斩马谡、六出祁山等大事件都有精辟的分析，从一个崭新的角度观察历史人物和历史事件，既讲故事也分析规律，并与当今现实生活相结合，古为今用，总结出能在现实生活中运用的规律和技巧。在《三国演义》中，诸葛亮是智慧的化身，用自己的智慧书写了人间传奇。隆中对策、舌战群儒、草船借箭、七擒孟获，一个个经典之作，犹如苍穹中的一颗颗璀璨的明珠，成就了他无人企及的智慧传奇。那么，孔明先生的智慧究竟从何而来？《三国演义》和《三国志》的记载有什么不同，千百年后的今天，他的卓越智慧又能给今天的我们带来哪些启迪和帮助呢？--></p>
+            <p class="con-des">
+                <span class="con-num"><i></i></span>
+                <span>购买地址：<span class="con-address"><!--<a href="">京东商城</a><a href="">当当网</a>--></span></span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="login layer">
+    <div class="con min">
+    <span class="close loginClose">X</span>
+       <p>账号：<input type="text" id="luser"><span id="lmsg"></span></p>
+       <p>密码：<input type="password" id="lpass"></p>
+       <p><input type="button" value="登录" id="lBtn"></p>
+    </div>
+</div>
+<div class="register layer">
+    <div class="con min">
+    <span class="close registerClose">X</span>
+    <p>账号：<input type="text" id="ruser"><span id="rmsg"></span></p>
+    <p>密码：<input type="password" id="rpass"></p>
+    <p><input type="button" value="注册" id="rBtn"></p>
+    </div>
+</div>
+</body>
+<script src="jquery-3.3.1.js"></script>
+<script>
+    var oLbtn=document.getElementById('lbtn');
+    var oRbtn=document.getElementById('rbtn');
+    var oLBtn=document.getElementById('lBtn');
+    var oRBtn=document.getElementById('rBtn');
+    var oLoginLayer=document.querySelector('.login');
+    var oRegisterLayer=document.querySelector('.register');
+    var oMsgLayer=document.querySelector('.msg');
+    var oLoginClose=document.querySelector('.loginClose');
+    var oRegisterClose=document.querySelector('.registerClose');
+    var oLuser=document.getElementById('luser');
+    var oLpass=document.getElementById('lpass');
+    var oRuser=document.getElementById('ruser');
+    var oRpass=document.getElementById('rpass');
+    var oLmsg=document.getElementById('lmsg');
+    var oRmsg=document.getElementById('rmsg');
+    var ofirCom=document.querySelector('.firCom');
+    var oDaohang=document.querySelector('.daohang');
+    var oAddmore=document.querySelector('.addmore a');
+    var oList=document.querySelector('.list');
+    var oMsgClose=document.querySelector('.msgClose');
+    var oTitle=document.querySelector('.con-right h4');
+    var oTag=document.querySelector('.tit');
+    var oConLeft=document.querySelector('.con-left');
+    var oAddress=document.querySelector('.con-address');
+    var oConNum=document.querySelector('.con-num');
+    var oConMsg=document.querySelector('.con-msg');
+    var iNow=0;
+    var page=1;
+    var data=[];
+
+
+
+    //点击登录弹框lbtn
+    oLbtn.onclick=function () {
+        oLoginLayer.style.display='block';
+    }
+    //点击登录框X
+    oLoginClose.onclick=function () {
+        oLoginLayer.style.display='none';
+    }
+    //点击注册弹框rbtn
+    oRbtn.onclick=function () {
+        oRegisterLayer.style.display='block';
+    }
+    //点击注册框X
+    oRegisterClose.onclick=function () {
+        oRegisterLayer.style.display='none';
+    }
+    //判断是否存在用户名
+    oLuser.onblur=function () {
+        $.ajax({
+            url:'/getUser',
+            type:'post',
+            data:{
+                user:oLuser.value
+            },
+            success:function (res) {
+                if (res.error==0){
+                    alert("用户不存在");
+                    oLmsg.className='red';
+                    oLmsg.innerHTML='X';
+                } else {
+                    oLmsg.className='green';
+                    oLmsg.innerHTML="√";
+                }
+            }
+        })
+    }
+    //点击登录按钮
+    oLBtn.onclick=function () {
+        var user=oLuser.value;
+        var pass=oLpass.value;
+        if (pass==""||user==""){
+            alert("用户名或密码为空");
+            return;
+        }
+        $.ajax({
+            url: '/login',
+            type: 'post',
+            data: {
+                user:user,
+                pass:pass
+            },
+            success:function (res) {
+                if (res.error==0){
+                    alert("登录成功");
+                    oLoginLayer.style.display='none';
+                }else {
+                    alert("用户名或密码错误")
+                }
+            }
+        })
+    }
+    //判断是否已注册
+    oRuser.onblur=function () {
+        $.ajax({
+                url:'/getUser',
+                type:'post',
+                data:{
+                    user:oRuser.value
+                },
+                success:function (res) {
+                    if (res.error==0){
+                        oRmsg.className='green';
+                        oRmsg.innerHTML='√';
+                    } else {
+                        alert("该用户名已注册");
+                        oRmsg.className='red';
+                        oRmsg.innerHTML='X';
+                    }
+                }
+            }
+        )
+    }
+    //点击注册按钮
+    oRBtn.onclick=function () {
+        var user=oRuser.value;
+        var pass=oRpass.value;
+        if (user==''||pass==''){
+            alert("用户名或密码为空")
+        }
+        $.ajax({
+            url:'/register',
+            type:'post',
+            data:{
+                user:user,
+                pass:pass
+            },
+            success:function (res) {
+                if (res.error==0){
+                    alert("注册成功");
+                    oRegisterLayer.style.display='none';
+                }
+            }
+        })
+    }
+    //插入合作商
+    $.ajax({
+        url:'data.json',
+        success:function (res) {
+            for (var i=0;i<res.data.length;i++) {
+                var oLi=document.createElement('li');
+                oLi.innerHTML='<a href="'+res.data[i].href+'"><img src="'+res.data[i].img+'"></a>';
+                ofirCom.appendChild(oLi);
+            }
+    }
+    })
+    //插入导航栏
+    $.ajax({
+        url:'http://apis.juhe.cn/goodbook/catalog',
+        data:{
+            key:'0766740eb1a8292baa4cb01c7b15f105'
+        },
+        dataType:'jsonp',
+        success:function (res) {
+            console.log(res);
+            if (res.resultcode=='200') {
+                for (var i=0;i<res.result.length;i++) {
+                    var oLi=document.createElement('li');
+                    oLi.innerHTML='<a href="javascript:;" data-id="'+res.result[i].id+'">'+res.result[i].catalog+'</a>';
+                    oDaohang.appendChild(oLi);
+                }
+            }
+            //默认获取第一个目录下的数据
+            iNow=res.result[0].id;
+            getData();
+            //给所有a添加事件
+            var oA=document.querySelectorAll('nav a');
+            for (var i=0;i<oA.length;i++){
+                oA[i].onclick=function () {
+                    iNow=this.getAttribute('data-id');
+                    page=1;
+                    getData()
+                }
+            }
+        }
+    })
+    //获取类别下数据的函数
+    function getData() {
+        $.ajax({
+            url:'http://apis.juhe.cn/goodbook/query',
+            data:{
+                key:'0766740eb1a8292baa4cb01c7b15f105',
+                catalog_id:iNow,
+                pn:(page-1)*10,
+                rn: 10
+            },
+            dataType: 'jsonp',
+            success:function (res) {
+                console.log(res);
+                if (page==1){
+                    data=[];
+                }
+                for (var i=0;i<res.result.data.length;i++){
+                    data.push(res.result.data[i]);
+                }
+                creatList()
+            }
+
+        })
+    }
+    //创建列表
+    function creatList() {
+            oList.innerHTML='';
+            for (var i=0;i<data.length;i++){
+                var oLi=document.createElement('li');
+                oLi.innerHTML='<a href="javascript:;">' +
+                    '            <img src="'+data[i].img+'" alt="">' +
+                    '            <p>'+data[i].title+'</p>' +
+                    '        </a>';
+                oLi.setAttribute('data-index',i);
+                oList.appendChild(oLi);
+            }
+        //获取所有的li 并且加点击事件
+        var aLi=oList.children;
+
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].onclick=function () {
+                showMsg(this.getAttribute('data-index'));
+            }
+        }
+    }
+
+    //点击加载更多
+    oAddmore.onclick=function () {
+        page++;
+        getData()
+    }
+
+    //关闭信息窗口
+    oMsgClose.onclick=function () {
+        oMsgLayer.style.display='none';
+    }
+    //展示详细信息
+    function showMsg(index) {
+        oMsgLayer.style.display='block';
+          //标题
+        oTitle.innerHTML=data[index].title;
+        //标签
+        var arr=data[index].tags.trim().split(' ');
+        oTag.innerHTML='';
+        for (var i=0;i<arr.length;i++){
+            var oSpan=document.createElement('span');
+            oSpan.innerHTML=arr[i];
+            oTag.appendChild(oSpan);
+        }
+         //图片及出版日期
+        oConLeft.innerHTML='<img src="'+data[index].img+'" alt="">\n' +
+            '                <p>出版日期：'+data[index].bytime+'</p>'
+          //阅读人数
+        oConNum.innerHTML=data[index].reading;
+         //详细描述
+        oConMsg.innerHTML=data[index].sub2;
+         //购买地址
+        var addressArr=data[index].online.split(' ');
+
+        oAddress.innerHTML='';
+
+        for (var i=0;i<addressArr.length;i++){
+            var n=addressArr[i].indexOf(":");
+            var oA=document.createElement('a');
+            oA.innerHTML=addressArr[i].substring(0,n);
+            oA.href=addressArr[i].substring(n+1);
+            oAddress.appendChild(oA);
+        }
+
+
+    }
+</script>
+</html>
